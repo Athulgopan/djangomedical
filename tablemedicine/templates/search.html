@@ -1,0 +1,40 @@
+{% load static %}
+<ul>
+    <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+    <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+    <li><a href="{% url 'logout' %}">LOG OUT</a> </li>
+</ul>
+<link rel="stylesheet" type="text/css" href="{% static 'css/Search.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for {{ M }}</h1>
+    <table border="3">
+    {% if D %}
+        <tr>
+            <th>Medicine Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Expiration Date</th>
+        </tr>
+        {% for product in D %}
+            {% if M in product.MedicineName %}
+                <tr>
+                    <td>{{ product.MedicineName }}</td> 
+                    <td>{{ product.Quantity }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.ExpirationDate }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="4"><h1>THERE IS NO {{ M }} AVAILABLE</h1></td>
+        </tr>
+    {% endif %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/list-med.css' %}">
+<ul>
+  <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+  <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+  <li><a href="{% url 'logout' %}">LOG OUT</a> </li>
+</ul>
+<h1></h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label>MedicineName</label><br>
+    <input type="name" name="name"><br>
+    <input type="submit" value="Submit">
+</form>
+

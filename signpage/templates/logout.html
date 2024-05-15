@@ -1,0 +1,18 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/logout.css' %}">
+<ul>
+  <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+  <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+  <li><a href="{% url 'list' %}">Search Medicine</a></li>
+  <li><a href="{% url 'list' %}">Search Medicine</a></li>
+</ul>
+  {% if user.is_authenticated %}
+    <p>You are currently logged in as {{ user.username }}.</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Log Out</button>
+    </form>
+  {% else %}
+    <p>You are not currently logged in.</p>
+  {% endif %}

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    color: #fff;
+}
+
+.img {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    border: 2px solid #00FF00;
+    box-shadow: 0 0 25px #00FF00;
+    overflow: hidden;
+}
+
+.f {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 50%;
+    height: 45px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    padding-right: 23px;
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder {
+    color: #fff;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    transition: .5s;
+}
+
+form input[type="text"]:focus,
+form input[type="text"]:valid,
+form input[type="password"]:focus,
+form input[type="password"]:valid {
+    color: #00FF00;
+}
+
+.btn {
+    width: 50%;
+    height: 45px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #00FF00;
+    color: #fff;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover::before {
+    top: 0;
+}

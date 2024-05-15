@@ -1,0 +1,16 @@
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/delete.css' %}">
+<ul>
+  <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+  <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+  <li><a href="{% url 'list' %}">Search Medicine</a></li>
+  <li><a href="{% url 'list' %}">Search Medicine</a></li>
+</ul>
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ product.MedicineName }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+

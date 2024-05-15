@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'createproduct' %}">ADD stock</a>
+        <a href="{% url 'retrieve' %}">EDIT STOCK</a>
+        <a href="{% url 'list' %}">search medicine</a>
+        <a href="{% url 'logout' %}">LOG OUT</a>
+        
+
+    </nav>
+    {% block 'content' %}
+    {% endblock %}
+</body>
+</html>

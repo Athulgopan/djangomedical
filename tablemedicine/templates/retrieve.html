@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/retrieve.css' %}">
+<ul>
+    <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+    <li><a href="{% url 'list' %}">Search Medicine</a></li>
+    <li><a href="{% url 'logout' %}">LOG OUT</a> </li>
+</ul>
+<h1> <center>Product details </center></h1>
+<table border="3">
+    <tr><th>Product_id</th>
+        <th>MedicineName</th>
+        <th>Quantity</th>
+        <th >price</th>
+        <th>Expire date</th>
+        <th>Edit</th>
+        <th>delete</th> </tr>
+        
+    {%for products in product_list%}
+    <tr>
+    <td>{{products.id}}</td>
+    <td>{{ products.MedicineName }} </td> 
+    <td>{{ products.Quantity }}</td>
+    <td>{{ products.price }}</td>
+    <td>{{ products.ExpirationDate }}</td>
+    <td ><button><a href="{%url 'updateproduct' products.id %}" class="btn btn-success" value="edit" type="submit">Edit</a> </button></td>
+    <td> <button><a href="{%url 'deleteproduct' products.id %}" class="btn btn-success" value="edit" type="submit">Delete</a></button></td></tr>
+       {% endfor %}
+    </table>
+    

@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #25252b;
+}
+
+.container {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    border: 2px solid #45f3ff;
+    box-shadow: 0 0 25px #45f3ff;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+    padding: 40px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    color: #25252b;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    padding-right: 23px;
+    padding-top: 3px;
+}
+
+form input[type="text"] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    transition: .5s;
+}
+
+form input[type="text"]:focus,
+form input[type="text"]:valid {
+    color: #45f3ff;
+}
+
+.btn {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #45f3ff;
+    overflow: hidden;
+    z-index: 5;
+    margin-top: 35px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#25252b, #ff2770, #25252b, #ff2770);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover::before {
+    top: 0;
+}
+
+.container .curved-shape {
+    position: absolute;
+    right: 0;
+    top: -5px; 
+    height: 600px;
+    width: 850px;
+    background: linear-gradient(45deg, #25252b, #45f3ff);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+}
+ .input-box{
+    padding-top:2px;
+ }

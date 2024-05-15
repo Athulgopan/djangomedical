@@ -1,0 +1,13 @@
+{% load static %}
+<ul>
+    <li><a href="{% url 'createproduct' %}">Add Stock</a></li>
+    <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+    <li><a href="{% url 'logout' %}">LOG OUT</a> </li>
+</ul>
+<link rel="stylesheet" type="text/css" href="{% static 'css/update.css' %}">
+<h1>Update Product</h1>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success" value="update" type="submit">Update</button>
+</form>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Medicine Management System</h1>
+            <ul>
+                <li><a href="{% url 'retrieve' %}">Edit Stock</a></li>
+                <li><a href="{% url 'list' %}">Search Medicine</a></li>
+                <li><a href="{% url 'logout' %}">LOG OUT</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Enter Medicine Details</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
